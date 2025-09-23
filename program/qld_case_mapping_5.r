@@ -39,7 +39,7 @@ ui <- fluidPage(
         style = "background-color: #f8f9fa; padding: 10px; border-radius: 5px;",
         div(
           style = "margin-bottom: 5px;",
-          span(style = "display: inline-block; width: 15px; height: 15px; background-color: #FFD700; border-radius: 50%; margin-right: 8px; vertical-align: middle;"),
+          span(style = "display: inline-block; width: 15px; height: 15px; background-color: #FF8C00; border-radius: 50%; margin-right: 8px; vertical-align: middle;"),
           "Daytime Cases (5:00-19:00)"
         ),
         div(
@@ -132,7 +132,7 @@ server <- function(input, output, session) {
               valid_indices <- which(valid_dates)
               df_clean$time_category[valid_indices[daytime]] <- "Daytime"
               df_clean$time_category[valid_indices[!daytime]] <- "Nighttime"
-              df_clean$marker_color[valid_indices[daytime]] <- "#FFD700"  # 黄色 - 白天
+              df_clean$marker_color[valid_indices[daytime]] <- "#FF8C00"  # 橙色 - 白天
               df_clean$marker_color[valid_indices[!daytime]] <- "#0066CC"  # 蓝色 - 夜晚
               
               # 显示分类统计
@@ -169,7 +169,7 @@ server <- function(input, output, session) {
               valid_indices <- which(valid_dates)
               df_clean$time_category[valid_indices[daytime]] <- "Daytime"
               df_clean$time_category[valid_indices[!daytime]] <- "Nighttime"
-              df_clean$marker_color[valid_indices[daytime]] <- "#FFD700"
+              df_clean$marker_color[valid_indices[daytime]] <- "#FF8C00"
               df_clean$marker_color[valid_indices[!daytime]] <- "#0066CC"
               
               showNotification(paste("Converted and categorized:", sum(daytime), "daytime and", sum(!daytime), "nighttime cases"), 
